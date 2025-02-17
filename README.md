@@ -1,5 +1,5 @@
-# <span style="color:green">ZOOBA - Zoológico de Bauru Interativo</span>
-
+# ZOOBA - Zoológico de Bauru Interativo
+```markdown
 ## Descrição
 ZOOBA é um jogo interativo e realista que simula a experiência de visitar o Zoológico de Bauru. Os jogadores podem explorar o local, interagir com animais em realidade aumentada e aprender sobre a conservação da fauna de forma gamificada.
 

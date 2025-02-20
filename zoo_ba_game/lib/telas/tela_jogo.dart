@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zoo_ba_game/telas/jogo_memoria.dart';
 
 class TelaJogo extends StatelessWidget {
   const TelaJogo({super.key});
@@ -17,7 +18,7 @@ class TelaJogo extends StatelessWidget {
             color: Colors.white.withOpacity(0.1),
           ),
           Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -56,7 +57,13 @@ class TelaJogo extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // Navegar para o jogo da memória
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const JogoMemoria()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
                     shape: RoundedRectangleBorder(
@@ -72,7 +79,7 @@ class TelaJogo extends StatelessWidget {
                 const SizedBox(height: 30),
                 Image.asset(
                   'assets/logoII.png',
-                  width: 400,
+                  width: 300,
                 ),
               ],
             ),

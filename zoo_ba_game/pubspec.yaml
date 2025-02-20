@@ -61,6 +61,7 @@ flutter:
   assets:
   - assets/fundo.png
   - assets/logo.png
+  - assets/logoII.png
 
 
   # For details regarding adding assets from package dependencies, see

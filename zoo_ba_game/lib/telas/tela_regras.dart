@@ -6,7 +6,11 @@ class TelaRegras extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Regras')),
+      appBar: AppBar
+        (title: const Text('Regras'),
+        backgroundColor: Colors.green,
+        foregroundColor: Colors.white, // Cor do texto do título
+      ),
       body: const Center(child: Text('Aqui estarão as regras do jogo!')),
     );
   }

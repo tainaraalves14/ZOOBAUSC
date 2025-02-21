@@ -14,6 +14,7 @@ class JogosPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Jogos Educativos'),
         backgroundColor: Colors.green,
+        foregroundColor: Colors.white, // Cor do texto do título
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

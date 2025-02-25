@@ -14,16 +14,17 @@ class JogosPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Jogos Educativos'),
         backgroundColor: Colors.green,
-        foregroundColor: Colors.white, // Cor do texto do título
+        foregroundColor: Colors.white,
       ),
-      body: Padding(
+      body: Container(
+        color: Colors.white, // Fundo geral branco
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             const Text(
               'Escolha um Jogo:',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.green),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),
             ),
             const SizedBox(height: 20),
             Expanded(
@@ -57,11 +58,9 @@ class JogosPage extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.green,
           borderRadius: BorderRadius.circular(12),
-          boxShadow: [
-            BoxShadow(color: Colors.black26, blurRadius: 4, offset: Offset(2, 2)),
-          ],
+          color: Colors.green, // Fundo verde dos botões
+          border: Border.all(color: Colors.white, width: 2), // Borda branca para destaque
         ),
         child: Center(
           child: Text(

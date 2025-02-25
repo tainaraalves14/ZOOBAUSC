@@ -77,11 +77,7 @@ class TelaJogo extends StatelessWidget {
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
                 ),
-                const SizedBox(height: 30),
-                Image.asset(
-                  'assets/logoII.png',
-                  width: 300,
-                ),
+
               ],
             ),
           ),

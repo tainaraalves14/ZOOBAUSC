@@ -19,37 +19,58 @@ class JogosPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(
+            const Text(
               'Escolha um Jogo:',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.green),
             ),
-            const SizedBox(height: 30),
-            _buildMenuButton(context, 'Quiz Animal', const QuizAnimal()),
-            const SizedBox(height: 10),
-            _buildMenuButton(context, 'Encontre o Animal', const EncontreAnimal()),
-            const SizedBox(height: 10),
-            _buildMenuButton(context, 'Alimentação Correta', const AlimentacaoCorreta()),
-            const SizedBox(height: 10),
-            _buildMenuButton(context, 'Ciclo de Vida dos Animais', const CicloVidaAnimais()),
+            const SizedBox(height: 20),
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 2, // Define duas colunas no grid
+                crossAxisSpacing: 16, // Espaço horizontal entre os quadrados
+                mainAxisSpacing: 16, // Espaço vertical entre os quadrados
+                childAspectRatio: 1, // Mantém os botões quadrados
+                children: [
+                  _buildGameTile(context, 'Jogo Pares', const JogoMemoria()),
+                  _buildGameTile(context, 'Quiz Animal', const QuizAnimal()),
+                  _buildGameTile(context, 'Encontre o Animal', const EncontreAnimal()),
+                  _buildGameTile(context, 'Alimentação Correta', const AlimentacaoCorreta()),
+                  _buildGameTile(context, 'Ciclo de Vida', const CicloVidaAnimais()),
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildMenuButton(BuildContext context, String title, Widget page) {
-    return ElevatedButton(
-      onPressed: () {
+  Widget _buildGameTile(BuildContext context, String title, Widget page) {
+    return GestureDetector(
+      onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => page),
         );
       },
-      style: ElevatedButton.styleFrom(backgroundColor: Colors.green), // Alterado para 'backgroundColor'
-      child: Text(title, style: TextStyle(fontSize: 18, color: Colors.white)),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.green,
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(color: Colors.black26, blurRadius: 4, offset: Offset(2, 2)),
+          ],
+        ),
+        child: Center(
+          child: Text(
+            title,
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
     );
   }
 }
